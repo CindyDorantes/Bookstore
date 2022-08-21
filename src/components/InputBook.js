@@ -9,11 +9,11 @@ const InputBook = () => (
       placeholder="Book title"
       className="inputTitle"
     />
-    <select>
-      <option value="Action">Action</option>
-      <option value="ScienceFiction">Science Fiction</option>
-      <option value="Economy">Economy</option>
-    </select>
+    <input
+      type="text"
+      placeholder="Author"
+      className="inputAuthor"
+    />
     <button type="submit">ADD BOOK</button>
   </form>
 );
