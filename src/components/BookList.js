@@ -1,16 +1,15 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import PropTypes from 'prop-types';
+import BookItem from './BookItem';
 
 const BookList = (props) => {
   const { books } = props;
   return (
     <div>
-      <ul>
-        {books.map((book) => (
-          <li key={book.id}>{book.title}</li>
-        ))}
-      </ul>
+      {books.map((book) => (
+        <BookItem key={book.id} book={book} />
+      ))}
     </div>
   );
 };

@@ -15,6 +15,7 @@ class BookContainer extends React.Component {
           title: 'The Hunger Games',
           author: 'Suzanne Collins',
           chapter: 'Chapter 17',
+          progress: '64%',
         },
         {
           id: uuidv4(),
@@ -22,6 +23,7 @@ class BookContainer extends React.Component {
           title: 'Dune',
           author: 'Frank Herbert',
           chapter: 'Chapter 3: "A Lesson Learned"',
+          progress: '8%',
         },
         {
           id: uuidv4(),
@@ -29,6 +31,7 @@ class BookContainer extends React.Component {
           title: 'Capital in the Twenty-First Century',
           author: 'Thomas Piketty',
           chapter: 'Introduction',
+          progress: '0%',
         },
       ],
     };
