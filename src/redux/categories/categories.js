@@ -10,4 +10,11 @@ const statusReducer = (status = initialState, action) => {
   }
 } 
 
+const checkStatus = () => {
+  return {
+    type: CHECK_STATUS
+  }
+}
+
+export {checkStatus};
 export default statusReducer;
