@@ -4,12 +4,27 @@ const REMOVE_BOOK = 'remove_book';
 const bookReducer = (state = [], action) => {
   switch (action.type) {
     case ADD_BOOK :
-      return ;
+      return {...state, book};
     case REMOVE_BOOK:
-      return;
+      return 'filter state';
     default :
-    return state;
+      return state;
     }
 };
 
+const addBook = (book) => {
+  return {
+    type: ADD_BOOK,
+    payload: book
+  }
+};
+
+const removeBook = (book) => {
+  return {
+    type: REMOVE_BOOK,
+    payload: book
+  }
+};
+
+export { addBook, removeBook };
 export default bookReducer;
