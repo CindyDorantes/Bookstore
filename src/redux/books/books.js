@@ -32,15 +32,17 @@ const initialState = [
 
 const bookReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_BOOK:
-      const book = action.book;
+    case ADD_BOOK: {
+      const { book } = action.book;
       return [...state, book];
-    case REMOVE_BOOK:
-      const index = action.index;
+    }
+    case REMOVE_BOOK: {
+      const { index } = action.index;
       return [
         ...state.slice(0, index),
-        ...state.slice(index + 1, state.length)
+        ...state.slice(index + 1, state.length),
       ];
+    }
     default:
       return state;
   }
