@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import BookInfo from './BookInfo';
@@ -15,6 +16,6 @@ const BookItem = (props) => {
   );
 };
 
-BookItem.propTypes = { book: PropTypes.string.isRequired };
+BookItem.propTypes = { book: PropTypes.object.isRequired };
 
 export default BookItem;
