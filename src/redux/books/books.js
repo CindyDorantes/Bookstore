@@ -4,9 +4,14 @@ const REMOVE_BOOK = 'remove_book';
 const bookReducer = (state = [], action) => {
   switch (action.type) {
     case ADD_BOOK:
-      return 'array with added book';
+      const book = action.book;
+      return [...state, book];
     case REMOVE_BOOK:
-      return 'filter state';
+      const index = action.index;
+      return [
+        ...state.slice(0, index),
+        ...state.slice(index + 1, state.length)
+      ];
     default:
       return state;
   }
@@ -14,12 +19,12 @@ const bookReducer = (state = [], action) => {
 
 const addBook = (book) => ({
   type: ADD_BOOK,
-  payload: book,
+  book,
 });
 
-const removeBook = (book) => ({
+const removeBook = (index) => ({
   type: REMOVE_BOOK,
-  payload: book,
+  index,
 });
 
 export { addBook, removeBook };
