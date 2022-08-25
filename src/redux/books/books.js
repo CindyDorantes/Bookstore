@@ -33,8 +33,7 @@ const initialState = [
 const bookReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOK: {
-      const { book } = action.book;
-      return [...state, book];
+      return [...state, action.payload];
     }
     case REMOVE_BOOK: {
       const { index } = action.index;
@@ -50,7 +49,7 @@ const bookReducer = (state = initialState, action) => {
 
 const addBook = (book) => ({
   type: ADD_BOOK,
-  book,
+  payload: book,
 });
 
 const removeBook = (index) => ({

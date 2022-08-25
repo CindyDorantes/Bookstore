@@ -6,7 +6,6 @@ import InputBook from './InputBook';
 
 const BookContainer = () => {
   const books = useSelector((store) => store.bookReducer);
-  console.log(books);
   return (
     <div>
       <BookList books={books} />
