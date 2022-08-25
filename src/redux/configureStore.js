@@ -8,6 +8,6 @@ const reducer = combineReducers({
   statusReducer,
 });
 
-export default configureStore({
-  reducer,
-});
+const store = configureStore({ reducer });
+
+export default store;
