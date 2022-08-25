@@ -36,7 +36,12 @@ const bookReducer = (state = initialState, action) => {
       return [...state, action.payload];
     }
     case REMOVE_BOOK: {
-      const { index } = action.index;
+      let index;
+      for (let i = 0; i < state.length; i += 1) {
+        if (state[i].id === action.payload) {
+          index = i;
+        }
+      }
       return [
         ...state.slice(0, index),
         ...state.slice(index + 1, state.length),
@@ -54,7 +59,7 @@ const addBook = (book) => ({
 
 const removeBook = (index) => ({
   type: REMOVE_BOOK,
-  index,
+  payload: index,
 });
 
 export { addBook, removeBook };
