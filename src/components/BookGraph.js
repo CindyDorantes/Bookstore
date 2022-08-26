@@ -13,6 +13,6 @@ const BookGraph = (props) => {
   );
 };
 
-BookGraph.propTypes = { book: PropTypes.object.isRequired };
+BookGraph.propTypes = { book: PropTypes.array.isRequired };
 
 export default BookGraph;

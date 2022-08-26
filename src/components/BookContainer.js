@@ -1,11 +1,18 @@
 /* eslint-disable react/prefer-stateless-function */
-import React from 'react';
-import { useSelector } from 'react-redux';
+import { React, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getBook } from '../redux/books/books';
 import BookList from './BookList';
 import InputBook from './InputBook';
 
 const BookContainer = () => {
   const books = useSelector((store) => store.bookReducer);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getBook());
+  }, []);
+
   return (
     <div>
       <BookList books={books} />

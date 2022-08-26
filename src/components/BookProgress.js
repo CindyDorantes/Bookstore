@@ -13,6 +13,6 @@ const BookProgress = (props) => {
   );
 };
 
-BookProgress.propTypes = { book: PropTypes.object.isRequired };
+BookProgress.propTypes = { book: PropTypes.array.isRequired };
 
 export default BookProgress;

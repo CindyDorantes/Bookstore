@@ -1,37 +1,16 @@
 // import PropTypes from 'prop-types';
-import { v4 as uuidv4 } from 'uuid';
-
+// import { v4 as uuidv4 } from 'uuid';
+const GET_BOOK = 'get_book';
 const ADD_BOOK = 'add_book';
 const REMOVE_BOOK = 'remove_book';
-const initialState = [
-  {
-    id: uuidv4(),
-    genre: 'Action',
-    title: 'The Hunger Games',
-    author: 'Suzanne Collins',
-    chapter: 'Chapter 17',
-    progress: '64%',
-  },
-  {
-    id: uuidv4(),
-    genre: 'Science Fiction',
-    title: 'Dune',
-    author: 'Frank Herbert',
-    chapter: 'Chapter 3: "A Lesson Learned"',
-    progress: '8%',
-  },
-  {
-    id: uuidv4(),
-    genre: 'Economy',
-    title: 'Capital in the Twenty-First Century',
-    author: 'Thomas Piketty',
-    chapter: 'Introduction',
-    progress: '0%',
-  },
-];
+const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/yCu0gedfifE2iJXdHCE5/books';
+const initialState = [];
 
 const bookReducer = (state = initialState, action) => {
   switch (action.type) {
+    case GET_BOOK: {
+      return action.payload;
+    }
     case ADD_BOOK: {
       return [...state, action.payload];
     }
@@ -52,6 +31,15 @@ const bookReducer = (state = initialState, action) => {
   }
 };
 
+const getBook = () => (dispatch) => fetch(url)
+  .then(async (response) => {
+    const books = await response.json();
+    return books;
+  })
+  .then((books) => {
+    dispatch({ type: GET_BOOK, payload: books });
+  });
+
 const addBook = (book) => ({
   type: ADD_BOOK,
   payload: book,
@@ -62,5 +50,5 @@ const removeBook = (index) => ({
   payload: index,
 });
 
-export { addBook, removeBook };
+export { getBook, addBook, removeBook };
 export default bookReducer;
