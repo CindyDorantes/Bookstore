@@ -16,16 +16,7 @@ const bookReducer = (state = initialState, action) => {
       return action.payload;
     }
     case REMOVE_BOOK: {
-      let index;
-      for (let i = 0; i < state.length; i += 1) {
-        if (state[i].id === action.payload) {
-          index = i;
-        }
-      }
-      return [
-        ...state.slice(0, index),
-        ...state.slice(index + 1, state.length),
-      ];
+      return action.payload;
     }
     default:
       return state;
@@ -43,7 +34,6 @@ const getBook = () => (dispatch) => fetch(url)
 
 function addBook(book) {
   return async function addAPI(dispatch, getState) {
-    console.log('addBook', book);
     await fetch(url, {
       method: 'POST',
       body: JSON.stringify(book),
@@ -51,17 +41,31 @@ function addBook(book) {
         'Content-type': 'application/json; charset=UTF-8',
       },
     });
-    console.log('here goes the dispatch');
     dispatch(getBook());
     const books = getState().bookReducer;
     dispatch({ type: ADD_BOOK, payload: books });
   };
 }
 
-const removeBook = (index) => ({
-  type: REMOVE_BOOK,
-  payload: index,
-});
+function removeBook(id) {
+  return async function removeAPI(dispatch, getState) {
+    console.log('removeBook', id);
+    const urlRemove = url.concat('/', id);
+    await fetch(urlRemove, {
+      method: 'DELETE',
+      body: JSON.stringify({
+        item_id: id,
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    });
+    console.log('here goes the dispatch');
+    dispatch(getBook());
+    const books = getState().bookReducer;
+    dispatch({ type: REMOVE_BOOK, payload: books });
+  };
+}
 
 export { getBook, addBook, removeBook };
 export default bookReducer;
