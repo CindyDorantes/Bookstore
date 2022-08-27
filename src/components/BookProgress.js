@@ -7,12 +7,12 @@ const BookProgress = (props) => {
   return (
     <div className="bookProgress">
       <p className="currentChapter">CURRENT CHAPTER</p>
-      <h4 className="bookChapter">{book.chapter}</h4>
+      <h4 className="bookChapter">{book[0].chapter}</h4>
       <button type="button" className="btnProgress">UPDATE PROGRESS</button>
     </div>
   );
 };
 
-BookProgress.propTypes = { book: PropTypes.object.isRequired };
+BookProgress.propTypes = { book: PropTypes.array.isRequired };
 
 export default BookProgress;

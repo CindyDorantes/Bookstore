@@ -6,16 +6,17 @@ import BookGraph from './BookGraph';
 import BookProgress from './BookProgress';
 
 const BookItem = (props) => {
-  const { book } = props;
+  const { book, id } = props;
+
   return (
     <div className="bookItem">
-      <BookInfo book={book} />
-      <BookGraph book={book} />
-      <BookProgress book={book} />
+      <BookInfo book={book} id={id} />
+      <BookGraph book={book} id={id} />
+      <BookProgress book={book} id={id} />
     </div>
   );
 };
 
-BookItem.propTypes = { book: PropTypes.object.isRequired };
+BookItem.propTypes = { book: PropTypes.array.isRequired, id: PropTypes.string.isRequired };
 
 export default BookItem;

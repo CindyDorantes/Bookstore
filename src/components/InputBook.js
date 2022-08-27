@@ -1,7 +1,7 @@
-import { React, useState } from 'react';
+import { React, useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { addBook } from '../redux/books/books';
+import { addBook, getBook } from '../redux/books/books';
 // import PropTypes from 'prop-types';
 
 const InputBook = () => {
@@ -10,13 +10,19 @@ const InputBook = () => {
 
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(getBook());
+  }, [setTitle]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const book = {
-      id: uuidv4(),
+      item_id: uuidv4(),
       title,
       author,
+      category: 'Fiction',
     };
+    console.log('handle submit:', book);
     dispatch(addBook(book));
   };
 

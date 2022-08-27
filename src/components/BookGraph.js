@@ -7,12 +7,12 @@ const BookGraph = (props) => {
   return (
     <div className="bookGraph">
       <img alt="progress circle" />
-      <p className="progressPerc">{book.progress}</p>
+      <p className="progressPerc">{book[0].progress}</p>
       <p>Completed</p>
     </div>
   );
 };
 
-BookGraph.propTypes = { book: PropTypes.object.isRequired };
+BookGraph.propTypes = { book: PropTypes.array.isRequired };
 
 export default BookGraph;
