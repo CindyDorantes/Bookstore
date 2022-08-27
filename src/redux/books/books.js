@@ -9,10 +9,11 @@ const initialState = [];
 const bookReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_BOOK: {
+      console.log('get book');
       return action.payload;
     }
     case ADD_BOOK: {
-      return [...state, action.payload];
+      return action.payload;
     }
     case REMOVE_BOOK: {
       let index;
@@ -40,10 +41,22 @@ const getBook = () => (dispatch) => fetch(url)
     dispatch({ type: GET_BOOK, payload: books });
   });
 
-const addBook = (book) => ({
-  type: ADD_BOOK,
-  payload: book,
-});
+function addBook(book) {
+  return async function addAPI(dispatch, getState) {
+    console.log('addBook', book);
+    await fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(book),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    });
+    console.log('here goes the dispatch');
+    dispatch(getBook());
+    const books = getState().bookReducer;
+    dispatch({ type: ADD_BOOK, payload: books });
+  };
+}
 
 const removeBook = (index) => ({
   type: REMOVE_BOOK,

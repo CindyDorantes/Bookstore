@@ -13,6 +13,10 @@ const BookContainer = () => {
     dispatch(getBook());
   }, []);
 
+  // useEffect(() => {
+  //   dispatch(getBook());
+  // }, [books]);
+
   return (
     <div>
       <BookList books={books} />
