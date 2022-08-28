@@ -2,6 +2,7 @@ import { React, useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { addBook, getBook } from '../redux/books/books';
+import styles from './Styles/InputBook.module.css';
 // import PropTypes from 'prop-types';
 
 const InputBook = () => {
@@ -22,33 +23,35 @@ const InputBook = () => {
       author,
       category: 'Fiction',
     };
-    console.log('handle submit:', book);
     dispatch(addBook(book));
   };
 
   return (
-    <form onSubmit={(e) => handleSubmit(e)}>
-      <p>ADD NEW BOOK</p>
-      <input
-        type="text"
-        placeholder="Book title"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        className="inputTitle"
-        required
-      />
-      <input
-        type="text"
-        placeholder="Author"
-        value={author}
-        onChange={(e) => setAuthor(e.target.value)}
-        className="inputAuthor"
-        required
-      />
-      <button type="submit">
-        ADD BOOK
-      </button>
-    </form>
+    <div className={styles.inputBook}>
+      <span className={styles.line} />
+      <form onSubmit={(e) => handleSubmit(e)} className={styles.form}>
+        <p className={styles.title}>ADD NEW BOOK</p>
+        <input
+          type="text"
+          placeholder="Book title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          className={styles.inputTitle}
+          required
+        />
+        <input
+          type="text"
+          placeholder="Author"
+          value={author}
+          onChange={(e) => setAuthor(e.target.value)}
+          className={styles.inputTitle}
+          required
+        />
+        <button type="submit" className={styles.button}>
+          ADD BOOK
+        </button>
+      </form>
+    </div>
   );
 };
 

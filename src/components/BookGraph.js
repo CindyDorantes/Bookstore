@@ -1,18 +1,15 @@
 /* eslint-disable react/forbid-prop-types */
 import React from 'react';
-import PropTypes from 'prop-types';
+import style from './Styles/BookGraph.module.css';
 
-const BookGraph = (props) => {
-  const { book } = props;
-  return (
-    <div className="bookGraph">
-      <img alt="progress circle" />
-      <p className="progressPerc">{book[0].progress}</p>
-      <p>Completed</p>
+const BookGraph = () => (
+  <div className={style.bookGraph}>
+    <div>
+      <p className={style.progressPerc}>64%</p>
+      <p className={style.completed}>Completed</p>
     </div>
-  );
-};
-
-BookGraph.propTypes = { book: PropTypes.array.isRequired };
+    <div className={style.line} />
+  </div>
+);
 
 export default BookGraph;
