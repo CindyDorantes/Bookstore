@@ -22,7 +22,6 @@ const InputBook = () => {
       author,
       category: 'Fiction',
     };
-    console.log('handle submit:', book);
     dispatch(addBook(book));
   };
 

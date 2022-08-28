@@ -9,7 +9,6 @@ const BookInfo = (props) => {
   const dispatch = useDispatch();
 
   const handleClick = (id) => {
-    console.log('lets delete!');
     dispatch(removeBook(id));
   };
 

@@ -9,7 +9,6 @@ const initialState = [];
 const bookReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_BOOK: {
-      console.log('get book');
       return action.payload;
     }
     case ADD_BOOK: {
@@ -49,7 +48,6 @@ function addBook(book) {
 
 function removeBook(id) {
   return async function removeAPI(dispatch, getState) {
-    console.log('removeBook', id);
     const urlRemove = url.concat('/', id);
     await fetch(urlRemove, {
       method: 'DELETE',
@@ -60,7 +58,6 @@ function removeBook(id) {
         'Content-type': 'application/json; charset=UTF-8',
       },
     });
-    console.log('here goes the dispatch');
     dispatch(getBook());
     const books = getState().bookReducer;
     dispatch({ type: REMOVE_BOOK, payload: books });
