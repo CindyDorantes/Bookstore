@@ -9,8 +9,12 @@ const BookList = (props) => {
   const indexBooks = Object.keys(books);
   const infoBooks = Object.values(books);
 
+  const containerStyle = {
+    width: '86vw',
+  };
+
   return (
-    <div>
+    <div style={containerStyle}>
       {indexBooks.map((id, i) => (
         <BookItem book={infoBooks[i]} id={id} key={id} />
       ))}
