@@ -23,7 +23,7 @@
 }
 
 .bookInfo {
-  margin: 1.5rem 15rem 1.3rem 1.5rem;  
+  margin: 1.5rem 15rem 1.3rem 1.5rem;
   background-color: #fff;
 }
 
@@ -41,7 +41,7 @@
   font-family: RobotoSlabRegular, sans-serif;
   font-size: 1.6rem;
   letter-spacing: -0.2px;
-  color: #121212;  
+  color: #121212;
   background: inherit;
 }
 
@@ -53,7 +53,7 @@
 }
 
 .infoBtns {
-  margin: 1.3rem 0 0 0;  
+  margin: 1.3rem 0 0 0;
   background: inherit;
 }
 

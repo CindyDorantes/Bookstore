@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: MontserratRegular;
-  src: url('../Assets/Fonts/Montserrat-Regular.ttf');  
+  src: url('../Assets/Fonts/Montserrat-Regular.ttf');
 }
 
 * {
@@ -16,7 +16,6 @@
 
 :root {
   --azure: #0290ff;
-
 }
 
 .navbarCont {
@@ -33,7 +32,7 @@
   width: calc(100% - 2px);
   border: solid 1px var(--white);
   padding: 1.75rem 4.75rem;
-  background-color: #fff
+  background-color: #fff;
 }
 
 .navTitle {
