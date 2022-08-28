@@ -23,7 +23,8 @@
 }
 
 .bookInfo {
-  margin: 2rem 15rem 1.7rem 1.7rem;
+  margin: 2rem 15rem 1.75rem 1.7rem;  
+  background-color: #fff;
 }
 
 .bookGenre {
@@ -32,6 +33,7 @@
   font-family: MontserratBold, sans-serif;
   font-size: 0.875rem;
   color: #121212;
+  background: inherit;
 }
 
 .bookTitle {
@@ -39,17 +41,20 @@
   font-family: RobotoSlabRegular, sans-serif;
   font-size: 1.6rem;
   letter-spacing: -0.2px;
-  color: #121212;
+  color: #121212;  
+  background: inherit;
 }
 
 .bookAuthor {
   font-family: RobotoSlabLight, sans-serif;
   font-size: 0.875rem;
   color: #4386bf;
+  background: inherit;
 }
 
 .infoBtns {
-  margin: 1.3rem 0 0 0;
+  margin: 1.3rem 0 0 0;  
+  background: inherit;
 }
 
 .button {
@@ -59,6 +64,7 @@
   font-size: 0.875rem;
   line-height: 1.9rem;
   color: #4386bf;
+  background: inherit;
 }
 
 .button:hover {

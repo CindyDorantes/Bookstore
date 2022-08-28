@@ -1,0 +1,45 @@
+@font-face {
+  font-family: MontserratBold;
+  src: url('../Assets/Fonts/Montserrat-Bold.ttf');
+}
+
+@font-face {
+  font-family: MontserratRegular;
+  src: url('../Assets/Fonts/Montserrat-Regular.ttf');  
+}
+
+@font-face {
+  font-family: RobotoSlabBold;
+  src: url('../Assets/Fonts/RobotoSlab-Bold.ttf');
+}
+
+@font-face {
+  font-family: RobotoSlabRegular;
+  src: url('../Assets/Fonts/RobotoSlab-Regular.ttf');
+}
+
+@font-face {
+  font-family: RobotoSlabLight;
+  src: url('../Assets/Fonts/RobotoSlab-Light.ttf');
+}
+
+.bookGraph {
+  margin: 2rem 5rem 1.7rem 1.7rem;
+  background-color: #fff;
+}
+
+.progressPerc {
+  font-family: MontserratRegular, sans-serif;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  color: #121212;
+  background: inherit;
+}
+
+.completed {
+  font-family: MontserratRegular, sans-serif;
+  opacity: 0.5;
+  color: #121212;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+}
