@@ -57,3 +57,8 @@
     text-align: center;  
     color: #fff;
   }
+
+  .btnProgress:hover {
+    cursor: pointer;
+    background-color: #017bd8;
+  }

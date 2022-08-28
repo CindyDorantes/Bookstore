@@ -67,6 +67,13 @@
   font-style: normal;
   line-height: normal;
   letter-spacing: 1.9px;
+  text-decoration: none;
   color: #121212;
   background: inherit;
+}
+
+.navLink:hover {
+  cursor: pointer;
+  font-family: MontserratBold, sans-serif;
+  text-decoration: underline;
 }

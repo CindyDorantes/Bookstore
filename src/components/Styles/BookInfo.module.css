@@ -23,7 +23,7 @@
 }
 
 .bookInfo {
-  margin: 2rem 15rem 1.75rem 1.7rem;  
+  margin: 1.5rem 15rem 1.3rem 1.5rem;  
   background-color: #fff;
 }
 
@@ -69,6 +69,7 @@
 
 .button:hover {
   cursor: pointer;
+  text-decoration: underline;
 }
 
 .line {
