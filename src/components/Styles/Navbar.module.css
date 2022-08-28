@@ -1,11 +1,11 @@
 @font-face {
   font-family: MontserratBold;
-  src: url('./Assets/Fonts/Montserrat-Bold.ttf');
+  src: url('../Assets/Fonts/Montserrat-Bold.ttf');
 }
 
 @font-face {
   font-family: MontserratRegular;
-  src: url('./Assets/Fonts/Montserrat-Regular.ttf');  
+  src: url('../Assets/Fonts/Montserrat-Regular.ttf');  
 }
 
 * {
@@ -30,7 +30,7 @@
 .navHeader {
   display: flex;
   flex-direction: row;
-  width: 100vw;
+  width: calc(100% - 2px);
   border: solid 1px var(--white);
   padding: 1.75rem 4.75rem;
   background-color: #fff
@@ -47,11 +47,13 @@
   line-height: normal;
   letter-spacing: normal;
   color: var(--azure);
+  background: inherit;
 }
 
 .navBar {
   display: flex;
   align-items: center;
+  background: inherit;
 }
 
 .navLink {
@@ -66,4 +68,5 @@
   line-height: normal;
   letter-spacing: 1.9px;
   color: #121212;
+  background: inherit;
 }

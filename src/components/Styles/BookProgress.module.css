@@ -1,0 +1,59 @@
+@font-face {
+    font-family: MontserratBold;
+    src: url('../Assets/Fonts/Montserrat-Bold.ttf');
+  }
+  
+  @font-face {
+    font-family: RobotoSlabBold;
+    src: url('../Assets/Fonts/RobotoSlab-Bold.ttf');
+  }
+  
+  @font-face {
+    font-family: RobotoSlabRegular;
+    src: url('../Assets/Fonts/RobotoSlab-Regular.ttf');
+  }
+  
+  @font-face {
+    font-family: RobotoSlabLight;
+    src: url('../Assets/Fonts/RobotoSlab-Light.ttf');
+  }
+
+  .bookProgress {
+    margin: 2rem 5rem 1.75rem 1.7rem;  
+    background-color: #fff;
+  }
+
+  .currentChapter {
+    opacity: 0.5;
+    font-family: RobotoSlabLight, sans-serif;  
+    font-size: 0.813rem;
+    line-height: 1.125rem;
+    color: #121212;
+    background: inherit;
+  }
+
+  .bookChapter {
+    font-family: RobotoSlabLight, sans-serif;
+    font-size: 1rem;
+    line-height: 1.3rem;
+    letter-spacing: -0.4px;
+    color: #121212;    
+    background: inherit;
+    margin: 0.5rem 0 1.4rem 0;
+  }
+
+  .btnProgress {
+    width: 11.5rem;
+    height: 2.063rem;
+    padding: 0.438rem 1.188rem 0.5rem 1.375rem;
+    border-radius: 3px;  
+    background-color: #0290ff;
+    border: none;
+    text-decoration: none;
+    font-family: RobotoSlabLight, sans-serif;
+    font-size: 0.813rem;
+    line-height: 1.125rem;
+    letter-spacing: 0.5px;
+    text-align: center;  
+    color: #fff;
+  }
