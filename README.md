@@ -11,7 +11,12 @@ By building this application, React and Redux have been practiced.
 ## Built With
 
 - React
+- Deployed with netlify
 - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Live Demo
+
+[Live Demo Link](https://book-store-1088.netlify.app)
 
 ## GETTING STARTED
 
